@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a4da2c51-6dd5-4f99-9a39-18d51522d869" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2XG05wMsMpiGvhpaCxBw53ymbQK" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/sbutt/IdeaProjects/DokumentManagementSystemMaven/src/main/java/input",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\main\java\input" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\main\java\input" />
+      <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\test" />
+      <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="DokumentManagementSystemMaven" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdnerSystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdnerSystemTest.testExceptionWirdAusgeloest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
+      <option name="METHOD_NAME" value="testExceptionWirdAusgeloest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdnerSystemTest.testInvalideDateiZuValide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
+      <option name="METHOD_NAME" value="testInvalideDateiZuValide" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdnerSystemTest.testKeinImporterOrdner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
+      <option name="METHOD_NAME" value="testKeinImporterOrdner" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.OrdnerSystemTest" />
+        <item itemvalue="JUnit.OrdnerSystemTest.testInvalideDateiZuValide" />
+        <item itemvalue="JUnit.OrdnerSystemTest.testKeinImporterOrdner" />
+        <item itemvalue="JUnit.OrdnerSystemTest.testExceptionWirdAusgeloest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a4da2c51-6dd5-4f99-9a39-18d51522d869" name="Changes" comment="" />
+      <created>1698239932474</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698239932474</updated>
+      <workItem from="1698239933518" duration="398000" />
+      <workItem from="1698305938524" duration="6926000" />
+      <workItem from="1698318733745" duration="225000" />
+      <workItem from="1698398424182" duration="3528000" />
+      <workItem from="1698656211189" duration="9099000" />
+      <workItem from="1698913897798" duration="2688000" />
+      <workItem from="1698920406770" duration="4942000" />
+      <workItem from="1699000882878" duration="4565000" />
+      <workItem from="1699013175873" duration="4367000" />
+      <workItem from="1699088540067" duration="1822000" />
+      <workItem from="1699259337917" duration="5135000" />
+      <workItem from="1699348548748" duration="4095000" />
+      <workItem from="1699360226515" duration="2269000" />
+      <workItem from="1699451924719" duration="281000" />
+      <workItem from="1699619001178" duration="4755000" />
+      <workItem from="1699864607016" duration="6971000" />
+      <workItem from="1699888008201" duration="3538000" />
+      <workItem from="1699949882187" duration="312000" />
+    </task>
+    <servers />
+  </component>
+</project>
