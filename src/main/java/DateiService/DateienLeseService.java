@@ -21,7 +21,7 @@ public class DateienLeseService {
         Path path = textFile.toPath();
         List<String> textFileList = new ArrayList<>();
         try(BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
-            String aktuelleZeile = null;
+            String aktuelleZeile;
             while ((aktuelleZeile = reader.readLine()) != null){
                 textFileList.add(aktuelleZeile);
             }

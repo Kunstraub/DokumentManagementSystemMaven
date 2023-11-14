@@ -4,10 +4,16 @@ import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.text.pdf.PdfWriter;
 
+
+import javax.sound.midi.Patch;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -18,9 +24,8 @@ public class DateienManipulationsService {
 
     public void writeToPdf(List<String> list){
         List<String> manipulierteListe = replaceTeamName(list);
-
         try{
-            Document document = new Document(new PdfDocument(new PdfWriter(VERARBEITET_PATH)));
+            Document document = new Document(new PdfDocument(new PdfWriter(VERARBEITET_PATH+"/manipuliertePDFDatei.pdf")));
             for (String line : manipulierteListe){
                 document.add(new Paragraph(line));
             }
@@ -29,6 +34,19 @@ public class DateienManipulationsService {
         }
         catch (IOException e){
             logger.severe("Beim schreiben in die Pdf Datei in den VerarbeitungsOrdner" +
+                    " ist ein Fehler passiert!! "+e.getMessage());
+        }
+    }
+
+    public void writeToText(List<String> list){
+        List<String> manipulierteListe = replaceJobName(list);
+        Path pathVerarbeitet = new File(VERARBEITET_PATH+"/manipulierteTextDatei.txt").toPath();
+        try(BufferedWriter writer = Files.newBufferedWriter(pathVerarbeitet)) {
+            for (String line : manipulierteListe){
+                writer.write(line);
+            }
+        } catch (IOException e) {
+            logger.severe("Beim schreiben in die Text Datei in den VerarbeitungsOrdner" +
                     " ist ein Fehler passiert!! "+e.getMessage());
         }
     }

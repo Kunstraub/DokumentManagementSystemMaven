@@ -20,23 +20,31 @@ public class Main {
         OrdnerSystem ordnerSystem = new OrdnerSystem(logger);
         File inputOrdner = new File(INPUT_PATH);
         File importOrdner = new File(IMPORT_PATH);
-      /*  for (File file : Objects.requireNonNull(inputOrdner.listFiles())){
+        for (File file : Objects.requireNonNull(inputOrdner.listFiles())){
             dokumentenListe.add(new Dokument(file.getName(), file.getParent()));
         }
         for (Dokument dokument : dokumentenListe){
             ordnerSystem.speicherDokument(dokument, importOrdner);
-        }*/
-        List<String> allLinesInPDF = new ArrayList<>();
-        for (File file : Objects.requireNonNull(importOrdner.listFiles())){
-            allLinesInPDF = new DateienLeseService().readPdfFileAllLines(file);
         }
-      /*  allLinesInPDF = new DateienManipulationsService().replaceTeamName(allLinesInPDF);
-        int page = 0;
-        for (String s : allLinesInPDF){
-            ++page;
-            System.out.println(s+" Zeile: "+page);
-        }*/
+        List<String> dataFromImportPDFFiles;
+        List<String> dataFromImportTextFiles;
+        for (File file : Objects.requireNonNull(importOrdner.listFiles())){
+            if (file.getName().endsWith("pdf")){
+                dataFromImportPDFFiles = new DateienLeseService().readPdfFileAllLines(file);
+                new DateienManipulationsService().writeToPdf(dataFromImportPDFFiles);
+                dataFromImportPDFFiles.clear();
+            }
+            if (file.getName().endsWith("txt") || file.getName().endsWith("log")){
+                dataFromImportTextFiles = new DateienLeseService().readTextFile(file);
+                new DateienManipulationsService().writeToText(dataFromImportTextFiles);
+                dataFromImportTextFiles.clear();
+            }
+
+        }
+
 
 
     }
+
+
 }
