@@ -52,13 +52,13 @@ public class DateienManipulationsService {
     }
     private List<String> replaceTeamName(List<String> list){
         return list.stream().map(
-                line -> line.replace("Projektteam", "Team")
+                line -> line.replace("Babiel GmbH", "(-------)")
         ).toList();
     }
 
     private List<String> replaceJobName(List<String> list){
        return list.stream().
-               map(line -> line.replace("Junior-Java-Entwickler","Senior-Java-Entwickler Vollprofi"))
+               map(line -> line.replace("Scrum","(-------)").replace("Babiel GmbH", "(-------)"))
                 .toList();
     }
 }
