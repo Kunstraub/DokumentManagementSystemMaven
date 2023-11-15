@@ -22,32 +22,33 @@ public class DateienManipulationsService {
     final Logger logger = Logger.getLogger(DateienManipulationsService.class.getName());
     private final static String VERARBEITET_PATH = String.format("src%smain%sjava%sverarbeitet",FILE_SEP,FILE_SEP,FILE_SEP);
 
-    public void writeToPdf(List<String> list){
+    public void writeToPdf(List<String> list, File file){
         List<String> manipulierteListe = replaceTeamName(list);
         try{
-            Document document = new Document(new PdfDocument(new PdfWriter(VERARBEITET_PATH+"/manipuliertePDFDatei.pdf")));
+            Document document = new Document(new PdfDocument(new PdfWriter(VERARBEITET_PATH+"/(angepasst)"+file.getName())));
             for (String line : manipulierteListe){
                 document.add(new Paragraph(line));
             }
             document.close();
-            logger.info("PDF wurde erfolgreich erstellt unter: "+VERARBEITET_PATH);
+            logger.info("PDFDatei: "+file.getName()+" wurde erfolgreich erstellt unter: "+VERARBEITET_PATH);
         }
         catch (IOException e){
             logger.severe("Beim schreiben in die Pdf Datei in den VerarbeitungsOrdner" +
-                    " ist ein Fehler passiert!! "+e.getMessage());
+                    " ist ein Fehler passiert!! Folgende Datei: "+file.getName()+" Exakte Exception: "+e.getMessage());
         }
     }
 
-    public void writeToText(List<String> list){
+    public void writeToText(List<String> list, File file){
         List<String> manipulierteListe = replaceJobName(list);
-        Path pathVerarbeitet = new File(VERARBEITET_PATH+"/manipulierteTextDatei.txt").toPath();
+        Path pathVerarbeitet = new File(VERARBEITET_PATH+"/(angepasst)"+file.getName()).toPath();
         try(BufferedWriter writer = Files.newBufferedWriter(pathVerarbeitet)) {
             for (String line : manipulierteListe){
                 writer.write(line);
             }
+            logger.info("Textdatei: "+file.getName()+" wurde erfolgreich erstellt unter: "+VERARBEITET_PATH);
         } catch (IOException e) {
             logger.severe("Beim schreiben in die Text Datei in den VerarbeitungsOrdner" +
-                    " ist ein Fehler passiert!! "+e.getMessage());
+                    " ist ein Fehler passiert!! Folgende Datei: "+file.getName()+ " Exakte Exception: "+e.getMessage());
         }
     }
     private List<String> replaceTeamName(List<String> list){

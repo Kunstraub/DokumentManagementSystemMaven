@@ -29,16 +29,23 @@ public class Main {
         List<String> dataFromImportPDFFiles;
         List<String> dataFromImportTextFiles;
         for (File file : Objects.requireNonNull(importOrdner.listFiles())){
-            if (file.getName().endsWith("pdf")){
-                dataFromImportPDFFiles = new DateienLeseService().readPdfFileAllLines(file);
-                new DateienManipulationsService().writeToPdf(dataFromImportPDFFiles);
-                dataFromImportPDFFiles.clear();
+            try{
+                if (file.getName().endsWith("pdf")){
+                    dataFromImportPDFFiles = new DateienLeseService().readPdfFileAllLines(file);
+                    new DateienManipulationsService().writeToPdf(dataFromImportPDFFiles, file);
+                    dataFromImportPDFFiles.clear();
+                }
+                if (file.getName().endsWith("txt") || file.getName().endsWith("log")){
+                    dataFromImportTextFiles = new DateienLeseService().readTextFile(file);
+                    new DateienManipulationsService().writeToText(dataFromImportTextFiles, file);
+                    dataFromImportTextFiles.clear();
+                }
             }
-            if (file.getName().endsWith("txt") || file.getName().endsWith("log")){
-                dataFromImportTextFiles = new DateienLeseService().readTextFile(file);
-                new DateienManipulationsService().writeToText(dataFromImportTextFiles);
-                dataFromImportTextFiles.clear();
+            catch (IOException e){
+                logger.severe("Beim lesen der Datei ist ein Fehler aufgetreten!! " +
+                        "Folgende Datei: "+file.getName()+" Exakte Exception: "+e.getMessage());
             }
+
 
         }
 

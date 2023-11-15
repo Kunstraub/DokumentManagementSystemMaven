@@ -15,9 +15,8 @@ import java.util.logging.Logger;
 
 public class DateienLeseService {
 
-    final Logger logger = Logger.getLogger(DateienLeseService.class.getName());
 
-    public List<String> readTextFile(File textFile){
+    public List<String> readTextFile(File textFile) throws IOException{
         Path path = textFile.toPath();
         List<String> textFileList = new ArrayList<>();
         try(BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
@@ -25,26 +24,11 @@ public class DateienLeseService {
             while ((aktuelleZeile = reader.readLine()) != null){
                 textFileList.add(aktuelleZeile);
             }
-        } catch (IOException e) {
-            logger.severe("Beim lesen der Text- oder Logdatei ist ein Fehler aufgetreten!! "+e.getMessage());
         }
         return textFileList;
     }
 
-    public String readPdfFileAsWholeText(File pdfFile){
-        String text = "";
-       try{
-           PDDocument document = PDDocument.load(pdfFile);
-           PDFTextStripper pdfTextStripper = new PDFTextStripper();
-           text = pdfTextStripper.getText(document);
-           document.close();
-       } catch (IOException e) {
-           logger.severe("Beim lesen der PDF-Datei ist ein Fehler aufgetreten!! "+e.getMessage());
-       }
-       return text;
-    }
-
-    public List<String> readPdfFileAllLines(File pdfFile){
+    public List<String> readPdfFileAllLines(File pdfFile) throws IOException{
         List<String> lines = new ArrayList<>();
         try{
             PDDocument document = PDDocument.load(pdfFile);
@@ -61,9 +45,10 @@ public class DateienLeseService {
             document.close();
         }
         catch (IOException e) {
-            logger.severe("Beim lesen der PDF-Datei ist ein Fehler aufgetreten!! "+e.getMessage());
+            throw e;
         }
         return lines;
     }
+
 
 }
