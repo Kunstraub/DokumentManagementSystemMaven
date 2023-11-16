@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -31,14 +32,16 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/sbutt/IdeaProjects/DokumentManagementSystemMaven/src/main/java/input&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
+    "last_opened_file_path": "C:/Users/sbutt/IdeaProjects/DokumentManagementSystemMaven/src/main/java/input",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\main\java\input" />
@@ -48,11 +51,64 @@
       <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\test" />
       <recent name="C:\Users\sbutt\IdeaProjects\DokumentManagementSystemMaven\src\main" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="DateiService" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.DateienLeseServiceTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="DokumentManagementSystemMaven" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateienLeseServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DateiService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DateiService" />
+      <option name="MAIN_CLASS_NAME" value="DateiService.DateienLeseServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateienLeseServiceTest.testReadPdfFileAllLines" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DateiService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DateiService" />
+      <option name="MAIN_CLASS_NAME" value="DateiService.DateienLeseServiceTest" />
+      <option name="METHOD_NAME" value="testReadPdfFileAllLines" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DateienLeseServiceTest.testReadTextFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DokumentManagementSystemMaven" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DateiService.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DateiService" />
+      <option name="MAIN_CLASS_NAME" value="DateiService.DateienLeseServiceTest" />
+      <option name="METHOD_NAME" value="testReadTextFile" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,43 +122,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrdnerSystemTest.testExceptionWirdAusgeloest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DokumentManagementSystemMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
-      <option name="METHOD_NAME" value="testExceptionWirdAusgeloest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrdnerSystemTest.testInvalideDateiZuValide" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DokumentManagementSystemMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
-      <option name="METHOD_NAME" value="testInvalideDateiZuValide" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrdnerSystemTest.testKeinImporterOrdner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DokumentManagementSystemMaven" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="OrdnerSystemTest" />
-      <option name="METHOD_NAME" value="testKeinImporterOrdner" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DateienLeseServiceTest" />
+        <item itemvalue="JUnit.DateienLeseServiceTest.testReadPdfFileAllLines" />
+        <item itemvalue="JUnit.DateienLeseServiceTest.testReadTextFile" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.OrdnerSystemTest" />
-        <item itemvalue="JUnit.OrdnerSystemTest.testInvalideDateiZuValide" />
-        <item itemvalue="JUnit.OrdnerSystemTest.testKeinImporterOrdner" />
-        <item itemvalue="JUnit.OrdnerSystemTest.testExceptionWirdAusgeloest" />
       </list>
     </recent_temporary>
   </component>
@@ -134,7 +160,8 @@
       <workItem from="1699949882187" duration="2263000" />
       <workItem from="1699961066376" duration="650000" />
       <workItem from="1699966581547" duration="3535000" />
-      <workItem from="1700036029194" duration="6569000" />
+      <workItem from="1700036029194" duration="9069000" />
+      <workItem from="1700122962704" duration="4183000" />
     </task>
     <servers />
   </component>
