@@ -16,12 +16,12 @@ import static org.junit.Assert.assertEquals;
 
 public class DateienLeseServiceTest{
 @Test
-public void testReadTextFile() throws IOException {
+public void testLeseTextFile() throws IOException {
     File tempFile = File.createTempFile("test",".txt");
     Files.write(tempFile.toPath(),"Zeile 1\nZeile 2\nZeile 3".getBytes());
 
     DateienLeseService dateienLeseService = new DateienLeseService();
-    List<String> testList = dateienLeseService.readTextFile(tempFile);
+    List<String> testList = dateienLeseService.leseTextFile(tempFile);
 
     assertEquals(3, testList.size());
     assertEquals("Zeile 1", testList.get(0));
@@ -30,21 +30,21 @@ public void testReadTextFile() throws IOException {
     tempFile.delete();
      }
 @Test
-public void testReadPdfFileAllLines() throws IOException {
+public void testLesePdfFileAlleZeilen() throws IOException {
     File tempPdfFile = File.createTempFile("test",".pdf");
-    String pdfContent = "Hier benutze ich eine Testzeile für die PDF-Datei!";
+    String pdfInhalt = "Hier benutze ich eine Testzeile für die PDF-Datei!";
 
-    createPdfWithContent(pdfContent,tempPdfFile);
+    bauePdfMitInhalt(pdfInhalt,tempPdfFile);
 
     DateienLeseService dateienLeseService = new DateienLeseService();
-    List<String> testList = dateienLeseService.readPdfFileAllLines(tempPdfFile);
+    List<String> testList = dateienLeseService.lesePdfFileAlleZeilen(tempPdfFile);
 
     assertEquals(1,testList.size());
-    assertEquals(pdfContent, testList.get(0));
+    assertEquals(pdfInhalt, testList.get(0));
     tempPdfFile.delete();
     }
 
-    private void createPdfWithContent(String content, File outputFile) throws IOException {
+    private void bauePdfMitInhalt(String inhalt, File outputFile) throws IOException {
         PDDocument document = new PDDocument();
         PDPage page = new PDPage();
         document.addPage(page);
@@ -53,7 +53,7 @@ public void testReadPdfFileAllLines() throws IOException {
             contentStream.beginText();
             contentStream.newLineAtOffset(10, 700); // Set starting position
             contentStream.setFont(PDType1Font.HELVETICA_BOLD, 12);
-            contentStream.showText(content);
+            contentStream.showText(inhalt);
             contentStream.endText();
         }
 

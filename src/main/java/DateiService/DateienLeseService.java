@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class DateienLeseService {
 
 
-    public List<String> readTextFile(File textFile) throws IOException{
+    public List<String> leseTextFile(File textFile) throws IOException{
         Path path = textFile.toPath();
         List<String> textFileList = new ArrayList<>();
         try(BufferedReader reader = Files.newBufferedReader(path, StandardCharsets.UTF_8)){
@@ -28,18 +28,18 @@ public class DateienLeseService {
         return textFileList;
     }
 
-    public List<String> readPdfFileAllLines(File pdfFile) throws IOException{
-        List<String> lines = new ArrayList<>();
+    public List<String> lesePdfFileAlleZeilen(File pdfFile) throws IOException{
+        List<String> zeilen = new ArrayList<>();
         try{
             PDDocument document = PDDocument.load(pdfFile);
             PDFTextStripper pdfTextStripper = new PDFTextStripper();
             for (int page = 0; page < document.getNumberOfPages(); page++){
                 pdfTextStripper.setStartPage(page + 1);
                 pdfTextStripper.setEndPage(page + 1);
-                String textFromPage = pdfTextStripper.getText(document);
-                String[] textLines = textFromPage.split("\\r?\\n");
-                for (String line : textLines) {
-                    lines.add(line);
+                String textVonSeite = pdfTextStripper.getText(document);
+                String[] textZeilen = textVonSeite.split("\\r?\\n");
+                for (String line : textZeilen) {
+                    zeilen.add(line);
                 }
             }
             document.close();
@@ -47,7 +47,7 @@ public class DateienLeseService {
         catch (IOException e) {
             throw e;
         }
-        return lines;
+        return zeilen;
     }
 
 

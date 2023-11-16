@@ -26,19 +26,19 @@ public class Main {
         for (Dokument dokument : dokumentenListe){
             ordnerSystem.speicherDokument(dokument, importOrdner);
         }
-        List<String> dataFromImportPDFFiles;
-        List<String> dataFromImportTextFiles;
+        List<String> pdfDatenVomImport;
+        List<String> textDatenVomImport;
         for (File file : Objects.requireNonNull(importOrdner.listFiles())){
             try{
                 if (file.getName().endsWith("pdf")){
-                    dataFromImportPDFFiles = new DateienLeseService().readPdfFileAllLines(file);
-                    new DateienManipulationsService().writeToPdf(dataFromImportPDFFiles, file);
-                    dataFromImportPDFFiles.clear();
+                    pdfDatenVomImport = new DateienLeseService().lesePdfFileAlleZeilen(file);
+                    new DateienManipulationsService().pdfErstellen(pdfDatenVomImport, file);
+                    pdfDatenVomImport.clear();
                 }
                 if (file.getName().endsWith("txt") || file.getName().endsWith("log")){
-                    dataFromImportTextFiles = new DateienLeseService().readTextFile(file);
-                    new DateienManipulationsService().writeToText(dataFromImportTextFiles, file);
-                    dataFromImportTextFiles.clear();
+                    textDatenVomImport = new DateienLeseService().leseTextFile(file);
+                    new DateienManipulationsService().textdateiErstellen(textDatenVomImport, file);
+                    textDatenVomImport.clear();
                 }
             }
             catch (IOException e){
