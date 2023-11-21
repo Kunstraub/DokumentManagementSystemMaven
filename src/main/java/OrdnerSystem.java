@@ -1,9 +1,15 @@
 
 
+import DateiService.DateienLeseService;
+import DateiService.DateienManipulationsService;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,8 +17,7 @@ import java.util.logging.SimpleFormatter;
 
 public class OrdnerSystem {
 
-    private Logger logger;
-    private AblageReferenz ablageReferenz;
+    private final Logger logger;
     private static final String FILE_SEP = File.separator;
     private static final String ERROR_LOG_PATH = String.format("src%smain%sjava%serror%serror.log", FILE_SEP, FILE_SEP, FILE_SEP, FILE_SEP);
     private static final String LOGGER_LOG_PATH = String.format("src%smain%sjava%slog%slogger.log", FILE_SEP, FILE_SEP, FILE_SEP, FILE_SEP);
@@ -39,12 +44,44 @@ public class OrdnerSystem {
         }
 
     }
+    public void verschiebeDateienVonInputZuImport(File inputOrdner, File importOrdner){
+        List<Dokument> dokumentenListe = new ArrayList<>();
+        for (File file : Objects.requireNonNull(inputOrdner.listFiles())){
+            dokumentenListe.add(new Dokument(file.getName(), file.getParent()));
+        }
+        for (Dokument dokument : dokumentenListe){
+            speicherDokument(dokument, importOrdner);
+        }
+    }
+
+    public void manipuliereDateienVonImport(File importOrdner){
+        List<String> pdfDatenVomImport;
+        List<String> textDatenVomImport;
+        for (File file : Objects.requireNonNull(importOrdner.listFiles())){
+            try{
+                if (file.getName().endsWith("pdf")){
+                    pdfDatenVomImport = new DateienLeseService().lesePdfFileAlleZeilen(file);
+                    new DateienManipulationsService().pdfErstellen(pdfDatenVomImport, file);
+                    pdfDatenVomImport.clear();
+                }
+                if (file.getName().endsWith("txt") || file.getName().endsWith("log")){
+                    textDatenVomImport = new DateienLeseService().leseTextFile(file);
+                    new DateienManipulationsService().textdateiErstellen(textDatenVomImport, file);
+                    textDatenVomImport.clear();
+                }
+            }
+            catch (IOException e){
+                logger.severe("Beim lesen der Datei ist ein Fehler aufgetreten!! " +
+                        "Folgende Datei: "+file.getName()+" Exakte Exception: "+e.getMessage());
+            }
+        }
+    }
 
     public void speicherDokument(Dokument dokument, File importOrdner) {
         try {
             if (istGueltigerOrdner(importOrdner)) {
             if (istValideDateiname(dokument.getDateiName())) {
-                    ablageReferenz = new AblageReferenz(dokument.getDateiName(), dokument.getOrdnerName());
+                AblageReferenz ablageReferenz = new AblageReferenz(dokument.getDateiName(), dokument.getOrdnerName());
                     Files.move(Paths.get(ablageReferenz.getPfadUndDatei()), Paths.get(importOrdner.getPath() +FILE_SEP+ ablageReferenz.getAblageName()));
                     logger.info("Die Datei: " + dokument.getDateiName() + " wurde erfolgreich in den ImportOrdner verschoben!");
             } else {
