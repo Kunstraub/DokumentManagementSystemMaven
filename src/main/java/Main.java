@@ -18,11 +18,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         final Logger logger = Logger.getLogger(OrdnerSystem.class.getName());
         OrdnerSystem ordnerSystem = new OrdnerSystem(logger);
+        DateienErstellung dateienErstellung = new DateienErstellung();
+        dateienErstellung.start();
         File inputOrdner = new File(INPUT_PATH);
         File importOrdner = new File(IMPORT_PATH);
         ordnerSystem.verschiebeDateienVonInputZuImport(inputOrdner,importOrdner);
         ordnerSystem.manipuliereDateienVonImport(importOrdner);
-
 
 
 
